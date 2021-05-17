@@ -18,8 +18,9 @@ SecretAccessToken=secret_access_token
 ```
 
 ## Usage
-Pretty straight forward. Download the latest release and run:
+Pretty straight forward. Download the source code and run:
 ```bash
 $ py downloader.py -u username -i number_of_tweets
 ```
-Files will then be saved as `TweetAuthorUsername_ImageFilename.jpg`
+Files will then be saved as `TweetAuthorUsername_ImageFilename.jpg`  
+Note that Twitter's API limits the `number_of_tweets` to 3200.
