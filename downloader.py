@@ -52,8 +52,8 @@ class TID(object):
             del request
     
     def _sanitize_filename(self, urls: Tuple[str, str]) -> Tuple[str, str]:
-        username = re.search(r"(?:https?):\/\/twitter\.com\/([^\/]+)", urls[0])
-        filename = re.search(r"(?:https?):\/\/pbs\.twimg\.com\/media\/([^\/]+)", urls[1])
+        username = re.search(r"(?:https?:\/\/)?twitter\.com\/([^\/]+)", urls[0])
+        filename = re.search(r"(?:https?:\/\/)?pbs\.twimg\.com\/media\/([^\/]+)", urls[1])
         return (username[1], filename[1])
 
     def _download_media(self) -> None:
