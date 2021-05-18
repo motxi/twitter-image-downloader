@@ -13,7 +13,7 @@ init(autoreset=True)
 class RequestError(Exception): pass
 class ParserError(Exception): pass
 
-class TID(object):
+class Downloader(object):
     def __init__(self, user: str, items: int = 200) -> None:
         self.user = user
         self.items = items
@@ -92,5 +92,5 @@ if __name__ == "__main__":
     parser.add_argument("-i", "--items", type=int, required=False, default=200, help="Number of items (Tweets) to scrape in total (max. 3200).")
     args = parser.parse_args()
 
-    tid = TID(args.user, args.items)
+    tid = Downloader(args.user, args.items)
     tid.download()
